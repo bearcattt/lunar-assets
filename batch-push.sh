@@ -14,10 +14,14 @@ git config core.fscache true
 git config http.postBuffer 524288000
 
 git config --local core.fsync none 2>/dev/null || true
+git config advice.addIgnoredFile false
 
 mapfile -t ITEMS < <(
     find . -mindepth 1 -maxdepth 1 \
         ! -name ".git" \
+        | while read -r f; do
+            git check-ignore -q "$f" || printf '%s\n' "$f"
+        done \
         | sort
 )
 
@@ -31,7 +35,9 @@ for ((i=0; i<TOTAL; i+=CHUNK)); do
 
     git add -- "${slice[@]}"
 
-    git diff --cached --quiet && continue
+    if git diff --cached --quiet; then
+        continue
+    fi
 
     git commit -qm "Chunk $PUSH"
 

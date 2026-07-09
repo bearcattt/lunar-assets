@@ -1,61 +1,11 @@
-#!/usr/bin/env bash
-
-set -euo pipefail
-
-BASE="https://truffled.lol"
-JSON_URL="$BASE/js/json/g.json"
-
+echo "Creating new entries..."
 OUTDIR="truffled"
 OUTJSON="games.json"
 
-MAX_JOBS=16
-
-echo "Cleaning old files..."
-rm -rf "$OUTDIR"
-mkdir -p "$OUTDIR"
-
 TMP=$(mktemp)
 
-echo "Downloading game database..."
-curl -sL "$JSON_URL" -o "$TMP"
-
-echo "Downloading images..."
-
-while IFS=$'\t' read -r THUMB FOLDER; do
-    (
-        mkdir -p "$OUTDIR/$FOLDER"
-
-        URL="$BASE/${THUMB#/}"
-        FILE="$OUTDIR/$FOLDER/img.webp"
-
-        curl -fsSL "$URL" -o "$FILE" || echo "Failed: $URL"
-    ) &
-
-    while (( $(jobs -rp | wc -l) >= MAX_JOBS )); do
-        wait -n
-    done
-
-done < <(
-jq -r '
-.games[]
-| select((.name | ascii_downcase) != "random")
-| [
-    (.thumbnail | ltrimstr("/")),
-    (
-      if (.url | startswith("/gamefile/")) then
-        (.url | split("/")[-1] | sub("\\.html$"; ""))
-      else
-        (.url | split("/")[-2])
-      end
-    )
-  ]
-| @tsv
-' "$TMP"
-)
-
-wait
-
-echo "Creating JSON..."
+curl -fsSL "https://truffled.lol/js/json/g.json" -o "$TMP"
+NEWJSON=$(mktemp)
 
 jq '
 [
@@ -77,11 +27,35 @@ jq '
       url: ("truffled.lol" + .url)
     }
 ]
-' "$TMP" > "$OUTJSON"
+' "$TMP" > "$NEWJSON"
 
-rm "$TMP"
+echo "Updating games.json..."
+
+if [[ -f "$OUTJSON" ]]; then
+
+    jq --slurpfile new "$NEWJSON" '
+        map(
+            select(
+                (.logo // "")
+                | startswith("truffled/")
+                | not
+            )
+        )
+        + $new[0]
+    ' "$OUTJSON" > "$OUTJSON.tmp"
+
+    mv "$OUTJSON.tmp" "$OUTJSON"
+
+else
+
+    mv "$NEWJSON" "$OUTJSON"
+
+fi
+
+rm -f "$NEWJSON"
+rm -f "$TMP"
 
 echo
-echo "Finished!"
-echo "Images saved: $OUTDIR/"
-echo "JSON saved: $OUTJSON"
+echo "Done!"
+echo "Images -> truffled/"
+echo "Updated -> games.json"
