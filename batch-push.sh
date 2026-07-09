@@ -17,12 +17,8 @@ git config --local core.fsync none 2>/dev/null || true
 git config advice.addIgnoredFile false
 
 mapfile -t ITEMS < <(
-    find . -mindepth 1 -maxdepth 1 \
-        ! -name ".git" \
-        | while read -r f; do
-            git check-ignore -q "$f" || printf '%s\n' "$f"
-        done \
-        | sort
+    git ls-files --others --cached --exclude-standard \
+    | sort
 )
 
 TOTAL=${#ITEMS[@]}
