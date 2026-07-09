@@ -6618,5 +6618,179 @@
     "gamename": "Yume Nikki, Webport",
     "logo": "truffled/yume/img.webp",
     "url": "truffled.lol/gamefile/yume.html"
+  },
+  {
+    "gamename": "Bendy and the Ink Machine",
+    "logo": "wasmrip/bendy-and-the-ink-machine/batim.png",
+    "url": "wasm.rip/files/BATIM/index.html",
+    "image": "img/batim.png"
+  },
+  {
+    "gamename": "MiSide",
+    "logo": "wasmrip/miside/miside.jpg",
+    "url": "wasm.rip/files/miside/miside.html",
+    "image": "img/miside.jpg"
+  },
+  {
+    "gamename": "Baldi's Basics Birthday Bash",
+    "logo": "wasmrip/baldi-s-basics-birthday-bash/bdaybash.png",
+    "url": "wasm.rip/files/birthdaybash/index.html",
+    "image": "img/bdaybash.png"
+  },
+  {
+    "gamename": "Boil Noodles at Night",
+    "logo": "wasmrip/boil-noodles-at-night/noodle.png",
+    "url": "wasm.rip/files/boilnoodles/index.html",
+    "image": "img/noodle.png"
+  },
+  {
+    "gamename": "Cuphead",
+    "logo": "wasmrip/cuphead/cuphead.png",
+    "url": "wasm.rip/files/cuphead/index.html",
+    "image": "img/cuphead.png"
+  },
+  {
+    "gamename": "Cheese Rolling",
+    "logo": "wasmrip/cheese-rolling/cheeserolling.png",
+    "url": "wasm.rip/files/cheese-rolling/index.html",
+    "image": "img/cheeserolling.png"
+  },
+  {
+    "gamename": "Brotato Paws n' Claws",
+    "logo": "wasmrip/brotato-paws-n-claws/bpac.png",
+    "url": "wasm.rip/files/bpac/index.html",
+    "image": "img/bpac.png"
+  },
+  {
+    "gamename": "One Shot: World Machine Edition",
+    "logo": "wasmrip/one-shot-world-machine-edition/oneshot.jpg",
+    "url": "wasm.rip/files/oneshot-wme/index.html",
+    "image": "img/oneshot.jpg"
+  },
+  {
+    "gamename": "Helltaker",
+    "logo": "wasmrip/helltaker/helltaker.png",
+    "url": "wasm.rip/files/Helltaker/helltaker.html",
+    "image": "img/helltaker.png"
+  },
+  {
+    "gamename": "Stardew Valley",
+    "logo": "wasmrip/stardew-valley/star.jpg",
+    "url": "wasm.rip/files/stardewvalley/index.html",
+    "image": "img/star.jpg"
+  },
+  {
+    "gamename": "Dice A Million",
+    "logo": "wasmrip/dice-a-million/diceamillion.png",
+    "url": "wasm.rip/files/diceAmillion/diceamillion.html",
+    "image": "img/diceamillion.png"
+  },
+  {
+    "gamename": "The Man From The Window 2",
+    "logo": "wasmrip/the-man-from-the-window-2/The_Man_from_the_Window_2_29.webp",
+    "url": "wasm.rip/files/MFDW2/index.html",
+    "image": "img/The_Man_from_the_Window_2_29.webp"
+  },
+  {
+    "gamename": "Fez",
+    "logo": "wasmrip/fez/FEZ.png",
+    "url": "wasm.rip/files/FEZ/fez.html",
+    "image": "img/FEZ.png"
+  },
+  {
+    "gamename": "Beatblock",
+    "logo": "wasmrip/beatblock/beatblock.jpg",
+    "url": "wasm.rip/files/beatblock/index.html",
+    "image": "img/beatblock.jpg"
+  },
+  {
+    "gamename": "Azahar",
+    "logo": "wasmrip/azahar/aza.png",
+    "url": "wasm.rip/files/Azahar/index.html",
+    "image": "img/aza.png"
+  },
+  {
+    "gamename": "Ravenfield",
+    "logo": "wasmrip/ravenfield/ravenfield.png",
+    "url": "wasm.rip/files/ravenfield/index.html",
+    "image": "img/ravenfield.png"
+  },
+  {
+    "gamename": "Happy Room",
+    "logo": "wasmrip/happy-room/happy-room.png",
+    "url": "wasm.rip/files/happy-room/index.html",
+    "image": "img/happy-room.png"
+  },
+  {
+    "gamename": "Inscryption",
+    "logo": "wasmrip/inscryption/insc.png",
+    "url": "wasm.rip/files/inscryption/index.html",
+    "image": "img/insc.png"
+  },
+  {
+    "gamename": "Lobotomy Corporation",
+    "logo": "wasmrip/lobotomy-corporation/lob-corp.png",
+    "url": "wasm.rip/files/lob-corp/index.html",
+    "image": "img/lob-corp.png"
+  },
+  {
+    "gamename": "Ages of Conflict",
+    "logo": "wasmrip/ages-of-conflict/aoc.png",
+    "url": "wasm.rip/files/aoc/index.html",
+    "image": "img/aoc.png"
+  },
+  {
+    "gamename": "While True: Learn()",
+    "logo": "wasmrip/while-true-learn-/wtl.png",
+    "url": "wasm.rip/files/wtl/index.html",
+    "image": "img/wtl.png"
+  },
+  {
+    "gamename": "The Adventures Of Sir Kicksalot",
+    "logo": "wasmrip/the-adventures-of-sir-kicksalot/sirkicksalot.png",
+    "url": "wasm.rip/files/sirkicksalot/index.html",
+    "image": "img/sirkicksalot.png"
+  },
+  {
+    "gamename": "Plauge Inc",
+    "logo": "wasmrip/plauge-inc/plauge.png",
+    "url": "wasm.rip/files/plauge/index.html",
+    "image": "img/plauge.png"
+  },
+  {
+    "gamename": "Trombone Champ",
+    "logo": "wasmrip/trombone-champ/img.png",
+    "url": "wasm.rip/files/tchamp/index.html",
+    "image": "img/tchamp/img.png"
+  },
+  {
+    "gamename": "Granny 3",
+    "logo": "wasmrip/granny-3/granny3.png",
+    "url": "wasm.rip/files/granny/granny3.html",
+    "image": "img/granny3.png"
+  },
+  {
+    "gamename": "PEAK (VERY wip)",
+    "logo": "wasmrip/peak-very-wip-/peak.png",
+    "url": "wasm.rip/files/peak/PEAK.html",
+    "image": "img/peak.png"
+  },
+  {
+    "gamename": "Among Us",
+    "logo": "wasmrip/among-us/amongus.webp",
+    "url": "wasm.rip/files/amongus/index.html",
+    "image": "img/amongus.webp"
+  },
+  {
+    "gamename": "GTA 3",
+    "logo": "wasmrip/gta-3/gta3.png",
+    "url": "wasm.rip/files/gta3/index.html",
+    "image": "img/gta3.png"
+  },
+  {
+    "gamename": "Freddy In Space 2",
+    "logo": "wasmrip/freddy-in-space-2/fis2.png",
+    "url": "wasm.rip/files/freddyinspace2/index.html",
+    "image": "img/fis2.png"
   }
 ]
