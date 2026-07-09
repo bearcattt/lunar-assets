@@ -12,17 +12,28 @@ git config commit.gpgSign false
 git config core.preloadindex true
 git config core.fscache true
 git config http.postBuffer 524288000
-
-git config --local core.fsync none 2>/dev/null || true
 git config advice.addIgnoredFile false
 
+git config --local core.fsync none 2>/dev/null || true
+
+# Get only files that need committing:
+# - untracked files
+# - modified tracked files
+# - ignores .gitignore rules
 mapfile -t ITEMS < <(
-    git ls-files --others --cached --exclude-standard \
-    | sort
+    {
+        git ls-files --others --exclude-standard
+        git diff --name-only
+    } | sort -u
 )
 
 TOTAL=${#ITEMS[@]}
-echo "Found $TOTAL items"
+echo "Found $TOTAL files"
+
+if [ "$TOTAL" -eq 0 ]; then
+    echo "Nothing to push."
+    exit 0
+fi
 
 PUSH=1
 
