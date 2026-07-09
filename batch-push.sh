@@ -16,14 +16,15 @@ git config advice.addIgnoredFile false
 
 git config --local core.fsync none 2>/dev/null || true
 
-# Get only files that need committing:
-# - untracked files
-# - modified tracked files
-# - ignores .gitignore rules
+# Get ALL files Git knows about that are not ignored:
+# - staged files
+# - unstaged new files
+# - modified files
 mapfile -t ITEMS < <(
     {
-        git ls-files --others --exclude-standard
+        git diff --cached --name-only
         git diff --name-only
+        git ls-files --others --exclude-standard
     } | sort -u
 )
 
